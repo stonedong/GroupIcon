@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         mGroupIcon = (GroupIcon) findViewById(R.id.icon_group);
 
-        Bitmap[] bitmaps = new Bitmap[13];
+        Bitmap[] bitmaps = new Bitmap[3];
         for (int i = 0; i < bitmaps.length; i++){
             bitmaps[i] = BitmapFactory.decodeResource(getResources(), R.drawable.k006);
         }

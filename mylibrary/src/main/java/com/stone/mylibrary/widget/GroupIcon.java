@@ -154,17 +154,17 @@ public class GroupIcon extends View {
 
         }
         else if(mBitmaps.length >= 3){
-            mRadius = (int)(sideLength / (2 + 1.732f));
+            mRadius = sideLength / 4;
             mPositions = new Position[3];
             mPositions[0] = new Position();
             mPositions[0].setX(mRadius);
-            mPositions[0].setY(sideLength - mRadius);
+            mPositions[0].setY((int)(mRadius + mRadius / 1.732f * 3 + (sideLength - (2+1.732f) * mRadius) / 2));
             mPositions[1] = new Position();
             mPositions[1].setX(sideLength / 2);
-            mPositions[1].setY(mRadius);
+            mPositions[1].setY((int)(mRadius + (sideLength - (2+1.732f) * mRadius) / 2));
             mPositions[2] = new Position();
             mPositions[2].setX(sideLength - mRadius);
-            mPositions[2].setY(sideLength - mRadius);
+            mPositions[2].setY((int)(mRadius + mRadius / 1.732f * 3 + (sideLength - (2+1.732f) * mRadius) / 2));
         }
         else if(mBitmaps.length == 2){
             // with two pictures direction horizontal

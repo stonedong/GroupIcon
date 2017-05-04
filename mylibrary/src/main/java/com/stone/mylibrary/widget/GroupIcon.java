@@ -153,7 +153,23 @@ public class GroupIcon extends View {
         int sideLength = Math.min(getWidth(), getHeight());
 
         if (mBitmaps.length >= 5){
-
+            mRadius = (int)((sideLength / 2 - mBorderGap) / (1 + 2 * Math.sin(2*Math.PI/360*54)));
+            mPositions = new Position[5];
+            mPositions[0] = new Position();
+            mPositions[0].setX(mBorderGap + mRadius);
+            mPositions[0].setY((int)(mRadius + mRadius * 2 * Math.sin(2*Math.PI/360*36)));
+            mPositions[1] = new Position();
+            mPositions[1].setX(sideLength / 2);
+            mPositions[1].setY(mRadius);
+            mPositions[2] = new Position();
+            mPositions[2].setX(sideLength - mRadius - mBorderGap);
+            mPositions[2].setY((int)(mRadius + mRadius * 2 * Math.sin(2*Math.PI/360*36)));
+            mPositions[3] = new Position();
+            mPositions[3].setX((int)(sideLength - mRadius - mBorderGap - 2 * mRadius * Math.sin(2*Math.PI/360*18)));
+            mPositions[3].setY((int)(mRadius + mRadius * 2 * Math.sin(2*Math.PI/360*36) + 2*mRadius*Math.sin(2*Math.PI/360*72)));
+            mPositions[4] = new Position();
+            mPositions[4].setX((int)(mBorderGap + mRadius + 2 * mRadius * Math.sin(2*Math.PI/360*18)));
+            mPositions[4].setY((int)(mRadius + mRadius * 2 * Math.sin(2*Math.PI/360*36) + 2*mRadius*Math.sin(2*Math.PI/360*72)));
         }
         else if(mBitmaps.length >= 3){
             mRadius = sideLength / 4;
